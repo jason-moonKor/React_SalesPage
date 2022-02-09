@@ -1,14 +1,26 @@
 import React, {useState} from "react";
-import {Typography, Button, Form, Input} from "antd";
+import {Button, Form, Input} from "antd";
+import FileUpload from "../../utils/FileUpload";
+import Axios from "axios";
 
 const {TextArea} = Input;
 
-function UploadProductPage() {
+const Continents = [
+	{key: 1, value: "Africa"},
+	{key: 2, value: "Europe"},
+	{key: 3, value: "Asia"},
+	{key: 4, value: "North America"},
+	{key: 5, value: "South America"},
+	{key: 6, value: "Australia"},
+	{key: 7, value: "Antarctica"}
+];
+
+function UploadProductPage(props) {
 	const [Title, setTitle] = useState("");
 	const [Description, setDescription] = useState("");
 	const [Price, setPrice] = useState(0);
 	const [Continent, setContinent] = useState(1);
-	const [Image, setImage] = useState([]);
+	const [Images, setImages] = useState([]);
 
 	const titleChangeHandler = (e) => {
 		setTitle(e.currentTarget.value);
@@ -22,13 +34,50 @@ function UploadProductPage() {
 		setPrice(e.currentTarget.value);
 	};
 
+	const continentChangeHandler = (e) => {
+		setContinent(e.currentTarget.value);
+	};
+
+	const updateImages = (newImages) => {
+		setImages(newImages);
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault(); //눌렀을때 새로고침안되게
+
+		if (!Title || !Description || !Price || !Continent || !Images) {
+			return alert("모든값을 넣어주셔야 합니다요");
+		}
+
+		//서버에 채운 값들을 리퀘스트로 보낸다.
+		const body = {
+			//로그인 된 사람의 ID
+			writer: props.user.userData._id,
+			title: Title,
+			description: Description,
+			price: Price,
+			images: Images,
+			continents: Continent
+		};
+		Axios.post("/api/product", body).then((response) => {
+			if (response.data.success) {
+				alert("상품 업로드에 성공했습니다!!");
+				props.history.push("/");
+			} else {
+				alert("상품 업로드에 실패했습니다!!");
+			}
+		});
+	};
+
 	return (
 		<div style={{maxWidth: "700px", margin: "2rem auto"}}>
 			<div style={{textAlign: "center", marginBottom: "2rem"}}>
 				<h2>여행 상품 업로드</h2>
 			</div>
 
-			<Form>
+			<Form onSubmit={submitHandler}>
+				<FileUpload refreshFunction={updateImages} />
+
 				<br />
 				<br />
 				<label>이름</label>
@@ -43,12 +92,18 @@ function UploadProductPage() {
 				<Input type="number" onChange={priceChangeHandler} value={Price} />
 				<br />
 				<br />
-				<select>
-					<option></option>
+				<select onChange={continentChangeHandler} value={Continent}>
+					{Continents.map((item) => (
+						<option key={item.key} value={item.key}>
+							{item.value}
+						</option>
+					))}
 				</select>
 				<br />
 				<br />
-				<Button>확인</Button>
+				<Button type="submit" onClick={submitHandler}>
+					확인
+				</Button>
 			</Form>
 		</div>
 	);
