@@ -27,12 +27,29 @@ const productSchema = mongoose.Schema(
 			maxlength: 100,
 			default: 0
 		},
+		continents: {
+			type: Number,
+			default: 1
+		},
 		views: {
 			type: Number,
 			default: 0
 		}
 	},
 	{timestamps: true}
+);
+
+productSchema.index(
+	{
+		title: "text",
+		description: "text"
+	},
+	{
+		weights: {
+			title: 5, //title을 description 보다 5배 더 중요하게 생각해서 검색한다 (몽고DB 명령어...default = 1)
+			description: 1
+		}
+	}
 );
 
 const Product = mongoose.model("Product", productSchema);
