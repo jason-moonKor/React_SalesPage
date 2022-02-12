@@ -19,7 +19,14 @@ function ProductImage(props) {
 	}, [props.detail]);
 
 	return (
-		<div>
+		<div
+			style={{
+				width: "80%",
+				height: "80%",
+				display: "flex",
+				justifyContent: "center"
+			}}
+		>
 			<ImageGallery items={Images} />
 		</div>
 	);

@@ -1,15 +1,20 @@
 import React, {useEffect, useState} from "react";
-// import {FaCode} from "react-icons/fa";
 import axios from "axios";
-import {Icon, Col, Card, Row} from "antd";
-import Meta from "antd/lib/card/Meta";
+import {Col, Card, Row, Button, Carousel} from "antd";
+// import Meta from "antd/lib/card/Meta";
 import ImageSlider from "../../utils/ImageSlider";
 import CheckBox from "./Section/CheckBox";
 import {continents, price} from "./Section/Datas";
 import RadioBox from "./Section/RadioBox";
 import SearchFeature from "./Section/SearchFeature";
 
+import first_slide from "./Images/slide1.jpg";
+import second_slide from "./Images/slide2.jpg";
+import third_slide from "./Images/slide3.jpg";
+
 function LandingPage() {
+	const {Meta} = Card;
+
 	const [Products, setProducts] = useState([]);
 	const [Skip, setSkip] = useState(0);
 	const [Limit, setLimit] = useState(8);
@@ -67,7 +72,7 @@ function LandingPage() {
 						</a>
 					}
 				>
-					<Meta title={product.title} description={`$${product.price}`} />
+					<Meta title={product.title} description={`${product.price}원`} />
 				</Card>
 			</Col>
 		);
@@ -124,11 +129,36 @@ function LandingPage() {
 
 	return (
 		<div style={{width: "75%", margin: "3rem auto"}}>
-			<div style={{textAlign: "center"}}>
-				<h2>
-					상품 진열 페이지!!!
-					<Icon type="html5" />
-				</h2>
+			<div>
+				<Carousel autoplay>
+					<div>
+						<a
+							className="main_slide"
+							href="http://localhost:3000/product/6207ac1e44cf40453c315a3f"
+							style={{backgroundImage: `url(${first_slide})`}}
+						></a>
+					</div>
+					<div>
+						<div className="main_slide">
+							<a
+								className="main_slide"
+								href="http://localhost:3000/product/6207b392c831962c089953f3"
+								style={{backgroundImage: `url(${second_slide})`}}
+							></a>
+						</div>
+					</div>
+					<div>
+						<div className="main_slide">
+							<a
+								className="main_slide"
+								href="http://localhost:3000/product/6207b31dc831962c089953f0"
+								style={{
+									backgroundImage: `url(${third_slide})`
+								}}
+							></a>
+						</div>
+					</div>
+				</Carousel>
 			</div>
 
 			{/* Filter Section */}
@@ -166,7 +196,14 @@ function LandingPage() {
 
 			{PostSize >= Limit && (
 				<div style={{display: "flex", justifyContent: "center"}}>
-					<button onClick={loadMoreHandler}>더보기</button>
+					<Button
+						size="large"
+						shape="round"
+						type="danger"
+						onClick={loadMoreHandler}
+					>
+						제품 더보기
+					</Button>
 				</div>
 			)}
 		</div>

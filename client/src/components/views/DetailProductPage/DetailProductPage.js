@@ -25,7 +25,11 @@ function DetailProductPage(props) {
 			</div>
 			<br />
 			<Row gutter={[16, 16]}>
-				<Col lg={12} sm={24}>
+				<Col
+					lg={12}
+					sm={24}
+					style={{display: "flex", justifyContent: "center"}}
+				>
 					{/* Image */}
 					<ProductImage detail={Product} />
 				</Col>

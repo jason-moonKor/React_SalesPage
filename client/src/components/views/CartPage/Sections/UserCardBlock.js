@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserCardBlock.css";
+import {Button} from "antd";
 
 function UserCardBlock(props) {
 	const renderCartImage = (images) => {
@@ -12,7 +13,7 @@ function UserCardBlock(props) {
 	const renderItems = () =>
 		props.products &&
 		props.products.map((product, idx) => (
-			<tr key={idx}>
+			<tr key={idx} className="cart_list_text">
 				<td>
 					<img
 						style={{width: "70px"}}
@@ -20,12 +21,18 @@ function UserCardBlock(props) {
 						src={renderCartImage(product.images)}
 					/>
 				</td>
+				<td>{product.title}</td>
 				<td>{product.quantity} 개</td>
 				<td>{product.price}</td>
 				<td>
-					<button onClick={() => props.removeItem(product._id)}>
-						장바구니에서 제거
-					</button>
+					<Button
+						size="large"
+						shape="round"
+						type="danger"
+						onClick={() => props.removeItem(product._id)}
+					>
+						장바구니 제거
+					</Button>
 				</td>
 			</tr>
 		));
@@ -34,8 +41,9 @@ function UserCardBlock(props) {
 		<div>
 			<table>
 				<thead>
-					<tr>
+					<tr className="cart_list_text">
 						<th>제품 이미지</th>
+						<th>제품 이름</th>
 						<th>제품 수량</th>
 						<th>제품 가격</th>
 						<th>카트에서 지우기</th>

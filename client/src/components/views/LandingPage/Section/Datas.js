@@ -1,31 +1,31 @@
 const continents = [
 	{
 		_id: 1,
-		name: "Africa"
+		name: "닭고기"
 	},
 	{
 		_id: 2,
-		name: "Europe"
+		name: "돼지고기"
 	},
 	{
 		_id: 3,
-		name: "Asia"
+		name: "소고기"
 	},
 	{
 		_id: 4,
-		name: "North America"
+		name: "밀키트"
 	},
 	{
 		_id: 5,
-		name: "South America"
+		name: "반조리"
 	},
 	{
 		_id: 6,
-		name: "Australia"
+		name: "소스류"
 	},
 	{
 		_id: 7,
-		name: "Antarctica"
+		name: "완제품"
 	}
 ];
 

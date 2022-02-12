@@ -1,87 +1,158 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+
+body {
+	font-family: "Yeon Sung";
+}
+
+.footer_a a {
+	color: whitesmoke;
+	padding-bottom: 7px;
+}
+
+.footer_a a:hover {
+	border-bottom: solid 3px #6db800;
+}
+
+.footer_logo a {
+	font-size: 40px;
+	color: whitesmoke;
+	padding: 0 10px;
+}
+
+.footer_logo a:hover {
+	color: #6db800;
+}
+
+.main_slide {
+	display: block;
+	width: 100%;
+	height: 250px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.cart_list_text > td,
+.cart_list_text > th {
+	text-align: center;
+}
+
+.ant-menu {
+	background-color: #ffc800;
+	color: whitesmoke;
+}
+
+.ant-menu-item-group-list > li {
+	color: rgb(110, 110, 110);
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.ant-menu-item {
+	color: whitesmoke;
+	font-size: 18px;
+}
+.Nav-Menu-list {
+	color: whitesmoke;
+	font-size: 18px;
+}
+.ant-menu-item-active {
+	color: black;
+	font-size: 18px;
+}
 
 .menu {
-  padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
-  overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+	padding: 10px 20px;
+	overflow: auto;
+	box-shadow: 0 0 30px #f3f1f1;
+	background-color: #ffc800;
 }
 
 .menu__logo {
-  width: 150px;
-  float: left;
+	width: 300px;
+	float: left;
+}
+
+.menu__logo img {
+	position: absolute;
+	top: 15px;
+	left: 20px;
+}
+.menu__logo img:hover {
+	transition: 1s;
+	transform: scale(1.05);
 }
 
 .menu__logo a {
-  display: inline-block;
-  font-size: 20px;
-  padding: 19px 20px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 19px 20px;
 }
 
 .menu__container .ant-menu-item {
-  padding: 0px 5px;
+	padding: 0px 5px;
 }
 
 .menu__container .ant-menu-submenu-title {
-  padding: 10px 20px;
+	padding: 10px 20px;
 }
 
 .menu__container .ant-menu-item a,
 .menu__container .ant-menu-submenu-title a {
-  padding: 10px 15px;
+	padding: 10px 15px;
 }
 
 .menu__container .ant-menu-horizontal {
-  border-bottom: none;
+	border-bottom: none;
 }
 
 .menu__container .menu_left {
-  float: left;
+	float: left;
 }
 
 .menu__container .menu_rigth {
-  float: right;
+	float: right;
 }
 
 .menu__mobile-button {
-  float: right;
-  height: 32px;
-  padding: 6px;
-  margin-top: 8px;
-  display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+	float: right;
+	height: 32px;
+	padding: 6px;
+	margin-top: 8px;
+	display: none !important; /* use of important to overwrite ant-btn */
+	background: #3e91f7;
 }
 
 .menu_drawer .ant-drawer-body {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
-  padding: 14px 24px !important;
+	padding: 14px 24px !important;
 }
 
 @media (max-width: 767px) {
-  .menu__mobile-button {
-    display: inline-block !important;
-  }
+	.menu__mobile-button {
+		display: inline-block !important;
+	}
 
-  .menu_left,
-  .menu_rigth {
-    display: none;
-  }
+	.menu_left,
+	.menu_rigth {
+		display: none;
+	}
 
-  .menu__logo a {
-    margin-left: -20px;
-  }
+	.menu__logo a {
+		margin-left: -20px;
+	}
 
-  .menu__container .ant-menu-item,
-  .menu__container .ant-menu-submenu-title {
-    padding: 1px 20px;
-  }
+	.menu__container .ant-menu-item,
+	.menu__container .ant-menu-submenu-title {
+		padding: 1px 20px;
+	}
 
-  .menu__logo a {
-    padding: 10px 20px;
-  }
+	.menu__logo a {
+		padding: 10px 20px;
+	}
 }

@@ -6,13 +6,13 @@ import Axios from "axios";
 const {TextArea} = Input;
 
 const Continents = [
-	{key: 1, value: "Africa"},
-	{key: 2, value: "Europe"},
-	{key: 3, value: "Asia"},
-	{key: 4, value: "North America"},
-	{key: 5, value: "South America"},
-	{key: 6, value: "Australia"},
-	{key: 7, value: "Antarctica"}
+	{key: 1, value: "닭고기"},
+	{key: 2, value: "돼지고기"},
+	{key: 3, value: "소고기"},
+	{key: 4, value: "밀키트"},
+	{key: 5, value: "반조리"},
+	{key: 6, value: "소스류"},
+	{key: 7, value: "완제품"}
 ];
 
 function UploadProductPage(props) {
@@ -46,7 +46,7 @@ function UploadProductPage(props) {
 		e.preventDefault(); //눌렀을때 새로고침안되게
 
 		if (!Title || !Description || !Price || !Continent || !Images) {
-			return alert("모든값을 넣어주셔야 합니다요");
+			return alert("모든 제품사항을 넣어주셔야 합니다");
 		}
 
 		//서버에 채운 값들을 리퀘스트로 보낸다.
@@ -61,10 +61,10 @@ function UploadProductPage(props) {
 		};
 		Axios.post("/api/product", body).then((response) => {
 			if (response.data.success) {
-				alert("상품 업로드에 성공했습니다!!");
+				alert("제품 업로드에 성공했습니다!!");
 				props.history.push("/");
 			} else {
-				alert("상품 업로드에 실패했습니다!!");
+				alert("제품 업로드에 실패했습니다!!");
 			}
 		});
 	};
@@ -72,7 +72,7 @@ function UploadProductPage(props) {
 	return (
 		<div style={{maxWidth: "700px", margin: "2rem auto"}}>
 			<div style={{textAlign: "center", marginBottom: "2rem"}}>
-				<h2>여행 상품 업로드</h2>
+				<span style={{fontSize: "2rem"}}>상품 등록 페이지</span>
 			</div>
 
 			<Form onSubmit={submitHandler}>
@@ -80,19 +80,23 @@ function UploadProductPage(props) {
 
 				<br />
 				<br />
-				<label>이름</label>
+				<label style={{fontSize: "1.5rem"}}>제품 이름</label>
 				<Input onChange={titleChangeHandler} value={Title} />
 				<br />
 				<br />
-				<label>설명</label>
+				<label style={{fontSize: "1.5rem"}}>제품 설명</label>
 				<TextArea onChange={descriptionChangeHandler} value={Description} />
 				<br />
 				<br />
-				<label>가격($)</label>
+				<label style={{fontSize: "1.5rem"}}>제품 가격</label>
 				<Input type="number" onChange={priceChangeHandler} value={Price} />
 				<br />
 				<br />
-				<select onChange={continentChangeHandler} value={Continent}>
+				<select
+					onChange={continentChangeHandler}
+					value={Continent}
+					style={{fontSize: "1.5rem"}}
+				>
 					{Continents.map((item) => (
 						<option key={item.key} value={item.key}>
 							{item.value}
@@ -101,9 +105,16 @@ function UploadProductPage(props) {
 				</select>
 				<br />
 				<br />
-				<Button type="submit" onClick={submitHandler}>
-					확인
-				</Button>
+				<div style={{display: "flex", justifyContent: "right"}}>
+					<Button
+						type="danger"
+						size="large"
+						shape="round"
+						onClick={submitHandler}
+					>
+						저장하기
+					</Button>
+				</div>
 			</Form>
 		</div>
 	);

@@ -34,11 +34,18 @@ function RightMenu(props) {
 		return (
 			<Menu mode={props.mode}>
 				<Menu.Item key="upload">
-					<a href="/product/upload">Upload!!!</a>
+					<a href="/product/upload">
+						<span className="Nav-Menu-list">상품등록하기</span>
+					</a>
+				</Menu.Item>
+				<Menu.Item key="history">
+					<a href="/history">
+						<span className="Nav-Menu-list">결제 정보</span>
+					</a>
 				</Menu.Item>
 				{/* 카트 아이콘 */}
 				<Menu.Item key="cart" style={{paddingBottom: 3}}>
-					<Badge count={5}>
+					<Badge count={user.userData && user.userData.cart.length}>
 						<a
 							href="/user/cart"
 							className="head-example"
@@ -52,7 +59,9 @@ function RightMenu(props) {
 					</Badge>
 				</Menu.Item>
 				<Menu.Item key="logout">
-					<a onClick={logoutHandler}>Logout</a>
+					<a onClick={logoutHandler}>
+						<span className="Nav-Menu-list">로그아웃</span>
+					</a>
 				</Menu.Item>
 			</Menu>
 		);
