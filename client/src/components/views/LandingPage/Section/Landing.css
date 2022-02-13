@@ -1,0 +1,13 @@
+.main_card img:hover {
+	transform: scale(1.1);
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+}
+
+.main_card {
+	overflow: hidden;
+}
+
+.meta_tag {
+	cursor: pointer;
+}

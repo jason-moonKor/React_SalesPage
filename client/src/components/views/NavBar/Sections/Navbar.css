@@ -53,6 +53,12 @@ body {
 	color: whitesmoke;
 	font-size: 18px;
 }
+
+.ant-menu-horizontal > .ant-menu-item > a {
+	color: whitesmoke;
+	font-size: 18px;
+}
+
 .Nav-Menu-list {
 	color: whitesmoke;
 	font-size: 18px;

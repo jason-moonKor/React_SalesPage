@@ -53,6 +53,10 @@ function FileUpload(props) {
 							<input {...getInputProps()} />
 							<Icon type="plus" style={{fontSize: "4rem"}} />
 						</div>
+						<br />
+						<div style={{fontSize: "1rem", color: "red", fontWeight: "bold"}}>
+							마지막순서로 등록하는 사진은 제품 상세이미지로 들어갑니다
+						</div>
 					</section>
 				)}
 			</Dropzone>

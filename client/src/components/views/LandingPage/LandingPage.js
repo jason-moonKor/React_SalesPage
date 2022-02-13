@@ -12,6 +12,8 @@ import first_slide from "./Images/slide1.jpg";
 import second_slide from "./Images/slide2.jpg";
 import third_slide from "./Images/slide3.jpg";
 
+import "./Section/Landing.css";
+
 function LandingPage() {
 	const {Meta} = Card;
 
@@ -72,7 +74,11 @@ function LandingPage() {
 						</a>
 					}
 				>
-					<Meta title={product.title} description={`${product.price}원`} />
+					<Meta
+						className="meta_tag"
+						title={product.title}
+						description={`${product.price}원`}
+					/>
 				</Card>
 			</Col>
 		);
@@ -129,6 +135,7 @@ function LandingPage() {
 
 	return (
 		<div style={{width: "75%", margin: "3rem auto"}}>
+			{/* 메인 상단 슬라이드 이미지 SECTION */}
 			<div>
 				<Carousel autoplay>
 					<div>
@@ -161,7 +168,7 @@ function LandingPage() {
 				</Carousel>
 			</div>
 
-			{/* Filter Section */}
+			{/* 필터 체크박스 Section */}
 			<Row gutter={[16, 16]}>
 				<Col lg={12} xs={24}>
 					{/* CheckBOx */}
@@ -179,7 +186,7 @@ function LandingPage() {
 				</Col>
 			</Row>
 
-			{/* Search section */}
+			{/* 검색기능 section */}
 			<div
 				style={{
 					display: "flex",
@@ -190,10 +197,11 @@ function LandingPage() {
 				<SearchFeature refreshFunction={updateSearchTerm} />
 			</div>
 
-			{/* Card Section */}
+			{/* 제품 이미지 Section */}
 			<Row gutter={[16, 16]}>{renderCards}</Row>
 			<br />
 
+			{/* 8개 이상 상품이 있으면 더보기 버튼 true, 없으면 false */}
 			{PostSize >= Limit && (
 				<div style={{display: "flex", justifyContent: "center"}}>
 					<Button

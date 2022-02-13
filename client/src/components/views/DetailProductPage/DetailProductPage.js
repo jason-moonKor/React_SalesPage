@@ -18,8 +18,11 @@ function DetailProductPage(props) {
 			.catch((err) => alert(err));
 	}, []);
 
+	let array = Product.images;
+	let detailImage = Product.images && array[array.length - 1];
+
 	return (
-		<div style={{width: "100%", padding: "3rem 4rem"}}>
+		<div style={{width: "100%", padding: "3rem 4rem", textAlign: "center"}}>
 			<div style={{display: "flex", justifyContent: "center"}}>
 				<h1>{Product.title}</h1>
 			</div>
@@ -39,6 +42,12 @@ function DetailProductPage(props) {
 					<ProductInfo detail={Product} />
 				</Col>
 			</Row>
+			<br />
+			<br />
+			<br />
+			<div>
+				{Product && <img src={`http://localhost:5000/${detailImage}`} alt="" />}
+			</div>
 		</div>
 	);
 }
