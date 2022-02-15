@@ -32,6 +32,7 @@ function FileUpload(props) {
 		setImages(newImages);
 
 		props.refreshFunction(newImages);
+		alert("이미지를 삭제했습니다");
 	};
 
 	return (
@@ -54,8 +55,15 @@ function FileUpload(props) {
 							<Icon type="plus" style={{fontSize: "4rem"}} />
 						</div>
 						<br />
-						<div style={{fontSize: "1rem", color: "red", fontWeight: "bold"}}>
-							마지막순서로 등록하는 사진은 제품 상세이미지로 들어갑니다
+						<div
+							style={{fontSize: "1.1rem", color: "tomato", fontWeight: "bold"}}
+						>
+							마지막순서로 등록하는 사진은 제품 상세이미지가 됩니다
+						</div>
+						<div
+							style={{fontSize: "1.1rem", color: "tomato", fontWeight: "bold"}}
+						>
+							등록된 사진을 클릭하면 삭제됩니다
 						</div>
 					</section>
 				)}

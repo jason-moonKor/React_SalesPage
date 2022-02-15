@@ -92,10 +92,14 @@ function UploadProductPage(props) {
 				<Input type="number" onChange={priceChangeHandler} value={Price} />
 				<br />
 				<br />
+				<br />
+				<label style={{fontSize: "1.5rem"}}>제품 태그</label>
+				<br />
+				<br />
 				<select
 					onChange={continentChangeHandler}
 					value={Continent}
-					style={{fontSize: "1.5rem"}}
+					style={{fontSize: "1.3rem", width: "10em", height: "2em"}}
 				>
 					{Continents.map((item) => (
 						<option key={item.key} value={item.key}>

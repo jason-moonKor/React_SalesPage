@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./UserCardBlock.css";
 import {Button} from "antd";
 
@@ -29,7 +29,10 @@ function UserCardBlock(props) {
 						size="large"
 						shape="round"
 						type="danger"
-						onClick={() => props.removeItem(product._id)}
+						onClick={() => {
+							alert("삭제되었습니다");
+							props.removeItem(product._id);
+						}}
 					>
 						장바구니 제거
 					</Button>

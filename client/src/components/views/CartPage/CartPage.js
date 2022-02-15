@@ -77,8 +77,24 @@ function CartPage(props) {
 			</div>
 			<div>
 				{ShowTotal ? (
-					<div style={{marginTop: "3rem", float: "right"}}>
-						<h2>총 금액 : {Total}원</h2>
+					<div
+						style={{
+							marginTop: "3rem",
+							textAlign: "right"
+						}}
+					>
+						<h1>
+							총 금액 :
+							<span
+								style={{
+									marginLeft: "1rem",
+									fontSize: "3rem",
+									fontWeight: "bold"
+								}}
+							>
+								{Total} 원
+							</span>
+						</h1>
 						<Paypal total={Total} onSuccess={transactionSuccess} />
 					</div>
 				) : ShowSuccess ? (

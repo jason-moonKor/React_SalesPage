@@ -11,6 +11,7 @@ function HistoryPage(props) {
 				<thead>
 					<tr>
 						<th>결제 ID</th>
+						<th>결제된 상품이름</th>
 						<th>가격</th>
 						<th>수량</th>
 						<th>구매 시간</th>
@@ -21,6 +22,7 @@ function HistoryPage(props) {
 						props.user.userData.history.map((item, idx) => (
 							<tr key={idx}>
 								<td>{item.id}</td>
+								<td>{item.name}</td>
 								<td>{item.price}</td>
 								<td>{item.quantity}</td>
 								<td>{item.dateOfPurchase}</td>
