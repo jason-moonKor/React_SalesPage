@@ -11,23 +11,24 @@
 >
 > > ### 장바구니 페이지
 > >
-> > > 총금액 FontSize 변경장바구니 4개이상 제품 등록시 Footer UI 와 총금액 및 Paypal결제 버튼 겹침 버그현상 Paypal 결제 버튼 및 총금액 위치 변경 (float -> text-align)으로 변경장바구니 제거 버튼 클릭시 alert창 생성
+> > > - 총금액 FontSize 변경장바구니 4개이상 제품 등록시 Footer UI 와 총금액 및 Paypal결제 버튼 겹침 버그현상 Paypal 결제 버튼 및 총금액 위치 변경 (float -> text-align)으로 변경장바구니 제거 버튼 클릭시 alert창 생성
 
 > > ### 결제 정보 페이지
 > >
-> > > 테이블에 결제된 상품이름 테이블 추가 생성
+> > > - 테이블에 결제된 상품이름 테이블 추가 생성
 
 > > ### 상품 등록 페이지
 > >
-> > > 등록된 사진 삭제시 alert 안내문구 생성제품 태그 select 박스 크기 변경
+> > > - 등록된 사진 삭제시 alert 안내문구 생성제품 태그 select 박스 크기 변경
 <br/><br/>
 
 > ## Verison Update Date - 220217
 >
 > > ### 전체페이지 CODE REFACTORING
 > >
-> > > 페이지 이동 기능이 있는 a 태그 전부 => Link 태그로 변경
-> > > 각 파일마다 import 기능별로 구분
+> > > - 페이지 이동 기능이 있는 a 태그 전부 => Link 태그로 변경
+> > > - 각 파일마다 import 기능별로 구분
+
 <br/><br/><br/>
 
 ### Tool & Stack
