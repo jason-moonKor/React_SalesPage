@@ -25,7 +25,10 @@ export default class MyApp extends React.Component {
 		};
 
 		let env = "sandbox"; // you can set here to 'production' for production
+
+		//페이팔은 한국 KRW이 지원이 안된다....일본돈도 되는데...ㅠㅠ
 		let currency = "USD"; // or you can set this value from your props or state
+
 		let total = this.props.total; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
 		// Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 

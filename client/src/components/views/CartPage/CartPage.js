@@ -5,8 +5,9 @@ import {
 	removeCartItem,
 	onSuccessBuy
 } from "../../../_actions/user_actions";
-import UserCardBlock from "./Sections/UserCardBlock";
 import {Empty, Result} from "antd";
+
+import UserCardBlock from "./Sections/UserCardBlock";
 import Paypal from "../../utils/Paypal";
 
 function CartPage(props) {

@@ -53,8 +53,8 @@ router.post("/products", (req, res) => {
 		if (req.body.filters[key].length > 0) {
 			if (key === "price") {
 				findArgs[key] = {
-					$gte: req.body.filters[key][0], //몽고DB에서 쓰는 값. greater than equal
-					$lte: req.body.filters[key][1] //less than equal
+					$gte: req.body.filters[key][0], //몽고DB에서 쓰는 값. $gte : greater than equal
+					$lte: req.body.filters[key][1] //lte : less than equal
 				};
 			} else {
 				findArgs[key] = req.body.filters[key];
@@ -100,7 +100,6 @@ router.get("/products_by_id", (req, res) => {
 	}
 
 	//productID를 이용해서 DB에서 상품정보들을 가져온다
-
 	Product.find({_id: {$in: productIds}})
 		.populate("writer")
 		.exec((err, product) => {

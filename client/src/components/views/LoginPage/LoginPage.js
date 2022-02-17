@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import {loginUser} from "../../../_actions/user_actions";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {Form, Icon, Input, Button, Checkbox, Typography} from "antd";
+
 import {useDispatch} from "react-redux";
 
 const {Title} = Typography;
@@ -164,14 +165,14 @@ function LoginPage(props) {
 										로그인
 									</Button>
 								</div>
-								<a
+								<Link
 									className="login-form-forgot"
-									href="/reset_user"
+									to="/register"
 									style={{float: "right"}}
 								>
 									비밀번호 찾기
-								</a>
-								<a href="/register">회원가입</a>
+								</Link>
+								<Link to="/register">회원가입</Link>
 							</Form.Item>
 						</form>
 					</div>

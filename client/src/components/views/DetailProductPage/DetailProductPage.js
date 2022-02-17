@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Row, Col} from "antd";
+
 import ProductImage from "./Sections/ProductImage";
 import ProductInfo from "./Sections/ProductInfo";
-import {Row, Col} from "antd";
 
 function DetailProductPage(props) {
 	const productId = props.match.params.productId;

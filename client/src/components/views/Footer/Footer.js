@@ -1,5 +1,6 @@
 import React from "react";
 import {Icon} from "antd";
+import {Link} from "react-router-dom";
 
 function Footer() {
 	return (
@@ -15,7 +16,7 @@ function Footer() {
 			}}
 		>
 			<div className="footer_a">
-				<a href="/">홈</a> | <a href="#">서비스소개</a> |{" "}
+				<Link to="/">홈</Link> | <a href="#">서비스소개</a> |{" "}
 				<a href="#">이용약관</a> | <a href="#">개인정보보호취급</a> |{" "}
 				<a href="#">밀수업자들 채용사이트</a>
 			</div>

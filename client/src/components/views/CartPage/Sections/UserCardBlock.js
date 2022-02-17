@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./UserCardBlock.css";
 import {Button} from "antd";
 

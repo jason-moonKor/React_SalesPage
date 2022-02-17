@@ -124,7 +124,6 @@ router.post("/addToCart", auth, (req, res) => {
 router.get("/removeFromCart", auth, (req, res) => {
 	User.findOneAndUpdate(
 		//먼저 cart안에 지우려고 한 상품을 지워주기
-
 		{_id: req.user._id},
 		{
 			$pull: {cart: {id: req.query.id}}
@@ -193,7 +192,6 @@ router.post("/successBuy", auth, (req, res) => {
 				//3. Product 콜렉션 안에 있는 sold필드 정보 업데이트 시켜주기
 
 				//상품당 몇개의 수량(quantity)을 샀는지 체크
-
 				let products = [];
 				doc.product.forEach((item) => {
 					products.push({id: item.id, quantity: item.quantity});

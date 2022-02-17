@@ -1,9 +1,12 @@
 import React, {useState} from "react";
+import {Drawer, Button, Icon} from "antd";
+import {Link} from "react-router-dom";
+
 import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
-import {Drawer, Button, Icon} from "antd";
-import "./Sections/Navbar.css";
+
 import logo from "./logo/logo.svg";
+import "./Sections/Navbar.css";
 
 function NavBar() {
 	const [visible, setVisible] = useState(false);
@@ -19,15 +22,15 @@ function NavBar() {
 	return (
 		<nav className="menu" style={{position: "fixed", zIndex: 5, width: "100%"}}>
 			<div className="menu__logo">
-				<a href="/">
-					<img src={logo} />
-				</a>
+				<Link to="/">
+					<img src={logo} alt="" />
+				</Link>
 			</div>
 			<div className="menu__container">
 				<div className="menu_left">
 					<LeftMenu mode="horizontal" />
 				</div>
-				<div className="menu_rigth">
+				<div className="menu_right">
 					<RightMenu mode="horizontal" />
 				</div>
 				<Button

@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Col, Card, Row, Button, Carousel} from "antd";
-// import Meta from "antd/lib/card/Meta";
+import {Link} from "react-router-dom";
+// import Meta from "antd/lib/card/Meta";  => 메인함수안에 const {Meta} = Card; 로 대체가능
+
 import ImageSlider from "../../utils/ImageSlider";
 import CheckBox from "./Section/CheckBox";
 import {continents, price} from "./Section/Datas";
@@ -69,9 +71,9 @@ function LandingPage() {
 			<Col lg={6} md={8} xs={24} key={index}>
 				<Card
 					cover={
-						<a href={`/product/${product._id}`}>
+						<Link to={`/product/${product._id}`}>
 							<ImageSlider images={product.images} />
-						</a>
+						</Link>
 					}
 				>
 					<Meta
@@ -139,30 +141,30 @@ function LandingPage() {
 			<div>
 				<Carousel autoplay>
 					<div>
-						<a
+						<Link
 							className="main_slide"
-							href="http://localhost:3000/product/6207ac1e44cf40453c315a3f"
+							to="product/6207ac1e44cf40453c315a3f"
 							style={{backgroundImage: `url(${first_slide})`}}
-						></a>
+						></Link>
 					</div>
 					<div>
 						<div className="main_slide">
-							<a
+							<Link
 								className="main_slide"
-								href="http://localhost:3000/product/6207b392c831962c089953f3"
+								to="product/6207b392c831962c089953f3"
 								style={{backgroundImage: `url(${second_slide})`}}
-							></a>
+							></Link>
 						</div>
 					</div>
 					<div>
 						<div className="main_slide">
-							<a
+							<Link
 								className="main_slide"
-								href="http://localhost:3000/product/6207b31dc831962c089953f0"
+								to="product/6207b31dc831962c089953f0"
 								style={{
 									backgroundImage: `url(${third_slide})`
 								}}
-							></a>
+							></Link>
 						</div>
 					</div>
 				</Carousel>

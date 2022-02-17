@@ -117,7 +117,7 @@ body {
 	float: left;
 }
 
-.menu__container .menu_rigth {
+.menu__container .menu_right {
 	float: right;
 }
 
@@ -145,7 +145,7 @@ body {
 	}
 
 	.menu_left,
-	.menu_rigth {
+	.menu_right {
 		display: none;
 	}
 
