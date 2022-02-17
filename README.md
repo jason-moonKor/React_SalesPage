@@ -20,7 +20,14 @@
 > > ### 상품 등록 페이지
 > >
 > > > 등록된 사진 삭제시 alert 안내문구 생성제품 태그 select 박스 크기 변경
+<br/><br/>
 
+> ## Verison Update Date - 220217
+>
+> > ### 전체페이지 CODE REFACTORING
+> >
+> > > 페이지 이동 기능이 있는 a 태그 전부 => Link 태그로 변경
+> > > 각 파일마다 import 기능별로 구분
 <br/><br/><br/>
 
 ### Tool & Stack
